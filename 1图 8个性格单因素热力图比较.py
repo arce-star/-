@@ -26,6 +26,14 @@ plt.figure(figsize=(10, 8))
 ax = sns.heatmap(df, annot=True, cmap='YlGnBu', fmt='d', linewidths=.5)
 plt.xticks(rotation=30,ha='right',fontsize = 15,fontweight = 'bold')
 plt.yticks(fontsize = 15,fontweight = 'bold')
+
+# 添加分组分隔线
+separator_positions = [3, 6, 9, 12, 15, 18]  # 每组结束位置
+for pos in separator_positions:
+    ax.hlines(pos, 0, len(df.columns), 
+              colors='gray', linestyles='dashed', linewidth=1.5)
+
+
 # plt.title('Model Performance Comparison')
 # plt.xlabel('Models')
 # plt.ylabel('Features')
